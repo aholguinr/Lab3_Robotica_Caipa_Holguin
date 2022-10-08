@@ -54,9 +54,18 @@ Con las rutinas ya definidas, es prudente crear un Main y añadirlas, con eso a 
 5. Posición M/D
 6. Home
 
-Resultando finalmente el Main como se puede apreciar en la siguiente figura:
-
-Foto del main
+Resultando finalmente el Main como se puede apreciar en el siguiente código:
+```
+PROC main()
+        ToolQ;
+        ToHome;
+        Security;
+        Path_40;
+        ToHome;
+        ToolQ;
+        ToHome;
+    ENDPROC
+```
 
 Finalmente se ejecuta la rutina Main para verificar su correcto funcionamiento antes de proceder al resto del trabajo.
 
