@@ -39,14 +39,13 @@ Otra trayectoria para definir es la que genere la rutina de escritura, para lo c
 
 Por último, se requiere definir la rutina que llevará el robot hacia la posición de M/D de la herramienta. Para ello existen varias formas, primero se verá la más sencilla y luego se desarrollará sobre las otras. La manera más sencilla de definir una posición adecuada real para M/D es simplemente tomar el brazo robótico en la vida real y ubicarlo en una posición que permita al operario montar y desmontar la herramienta de trabajo, teniendo en cuenta las condiciones de seguridad adecuadas (el robot debe estar detenido completamente, preferiblemente en parada de emergencia, antes de que el operario se acerque a una distancia prudente y pueda montar la herramienta para verificar que en dicha posición es posible).
 
-
-![Foto posición]()
+![Foto rutina montaje](https://github.com/aholguinr/Lab3_Robotica_Caipa_Holguin/blob/main/imagenes/montR.png?raw=true)
 
 Una vez realizado esto, del Flex Pendant se extraen los ángulos y se define un target de tipo articular en RobotStudio y se crea una rutina vacía, a la cual se le lleva inicialmente el target de ‘’Home’’, dado que la idea inicial es que el robot vaya a esta posición antes de dirigirse a la posición de M/D, y luego se añade la posición definida, teniendo en cuenta que ambos movimientos serán de tipo articular. 
 
 ![Foto rutina montaje RS](https://github.com/aholguinr/Lab3_Robotica_Caipa_Holguin/blob/main/imagenes/mont.png?raw=true)
 
-![Foto rutina montaje](https://github.com/aholguinr/Lab3_Robotica_Caipa_Holguin/blob/main/imagenes/montR.png?raw=true)
+
 
 Ahora bien, otra forma posible es mover el robot en RobotStudio y buscar una posición aproximada sobre la cuál se sabe que será posible realizar el M/D, teniendo en cuenta las dimensiones del espacio real de trabajo, y definir de igual forma un target articular y la rutina, pero esto no es tan recomendado, debido a que puede resultar una posición no adecuada. 
 
@@ -85,6 +84,6 @@ Con la disposición ya entendida, se procede a realizar algo que facilitará pos
 
 ![Foto señalando en el panel](https://github.com/aholguinr/Lab3_Robotica_Caipa_Holguin/blob/main/imagenes/panelS.png?raw=true)
 
-Luego, se debe identificar el nombre que tienen ellos en el controlador, para ello se va al Flex Pendant (en la vida real) y se va al menú principal, en la opción de ‘’Inputs and Outputs’’, en donde se pueden ver todas las entradas y salidas, y simplemente se va a ‘’View’’ y se selecciona ‘’Digital Inputs’’ para ver cuales son los nombres asignados a los botones disponibles, ya que estos actúan como entradas, y ‘’Digital Outputs’’ para ver cuales son los nombres asignados a los pilotos disponibles, ya que estos actúan como salidas. Los nombres para los botones son XXXXXXXXXXXX y los nombres para los pilotos son XXXXXXXXX. En este caso se van a usar dos botones y dos pilotos como lo indicado previamente. 
+Luego, se debe identificar el nombre que tienen ellos en el controlador, para ello se va al Flex Pendant (en la vida real) y se va al menú principal, en la opción de ‘’Inputs and Outputs’’, en donde se pueden ver todas las entradas y salidas, y simplemente se va a ‘’View’’ y se selecciona ‘’Digital Inputs’’ para ver cuales son los nombres asignados a los botones disponibles, ya que estos actúan como entradas, y ‘’Digital Outputs’’ para ver cuales son los nombres asignados a los pilotos disponibles, ya que estos actúan como salidas. Los nombres para los botones son DI_01 y DI_02, y los nombres para los pilotos son DO_01 y DO_03. En este caso se van a usar dos botones y dos pilotos como lo indicado previamente. 
 
 Con la identificación del panel ya realizada, es posible proceder a la definición de señales y asignación de condicionales con estas para ejecutar lo requerido. 
